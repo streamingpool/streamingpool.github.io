@@ -1,6 +1,3 @@
-# Streaming Pool
-
-
 ![travis](https://img.shields.io/travis/streamingpool/streamingpool-core/master.svg)
 ![release](https://img.shields.io/github/release/streamingpool/streamingpool-core.svg)
 ![license](https://img.shields.io/github/license/streamingpool/streamingpool-core.svg)
