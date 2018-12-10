@@ -30,9 +30,12 @@ is used for managing the application Beans.
 ## Motivation
 When connecting together heterogeneous and complex systems, it is not easy to exchange data between components. Streams of data are successfully used in industry in order to overcome this problem, especially in the case of "live" data. Streams are a specialization of the Observer design pattern and they provide asynchronous and non-blocking data flow.
 
-The ongoing effort of the http://reactivex.io/[ReactiveX] initiative is one example that demonstrates how demanding this technology is even for big companies. Bridging the discrepancies of different technologies with common interfaces is already done by the http://www.reactive-streams.org/[Reactive Streams] initiative and, in the JVM world, via https://github.com/reactive-streams/reactive-streams-jvm[reactive-streams-jvm] interfaces.
+The ongoing effort of the [ReactiveX](http://reactivex.io/) initiative is one example that demonstrates how demanding 
+this technology is even for big companies. Bridging the discrepancies of different technologies with common interfaces 
+is already done by the [Reactive Streams](http://www.reactive-streams.org/) initiative and, in the JVM world, 
+via [reactive-streams-jvm](https://github.com/reactive-streams/reactive-streams-jvm) interfaces.
 
-Streaming Pool is a framework for providing and discovering reactive streams. Through the mechanism of dependency injection provided by the http://projects.spring.io/spring-framework/[Spring Framework], Streaming Pool provides a so called `DiscoveryService`. This object can discover and chain streams of data that are technologically agnostic, through the use of instances of the `StreamId` interface. The stream to be discovered must be present in the Streaming Pool system (by providing it using the `ProvidingService`) or it must be possible to create it (using one of the registered `StreamFactory`). In the latter case, the stream is lazily created on demand.
+Streaming Pool is a framework for providing and discovering reactive streams. Through the mechanism of dependency injection provided by the [Spring Framework](http://projects.spring.io/spring-framework/), Streaming Pool provides a so called `DiscoveryService`. This object can discover and chain streams of data that are technologically agnostic, through the use of instances of the `StreamId` interface. The stream to be discovered must be present in the Streaming Pool system (by providing it using the `ProvidingService`) or it must be possible to create it (using one of the registered `StreamFactory`). In the latter case, the stream is lazily created on demand.
 The application (client) that uses a stream does not need to know which is the source of the information, it may be a component of the application itself or a distributed system. In this way, it is possible to create truly decoupled systems that are resilient to changes and are easy to mock or test.
 
 ## Introduction
@@ -40,7 +43,7 @@ A common use case in modern Software applications is to access the values from a
 
 All these problems can be solved using the well-known Observable-Observer pattern or a Reactive Stream of the data. Streaming Pool assumes you want to use a Reactive Stream for accessing your data.
 
-There are technologies that already solve this problem, such as https://projectreactor.io/[Project Reactor] and https://github.com/ReactiveX/RxJava[RxJava]. They provide stream creation, manipulation and subscription capabilities and they are great. Streaming Pool sits on top of these technologies.
+There are technologies that already solve this problem, such as [Project Reactor](https://projectreactor.io/) and [RxJava](https://github.com/ReactiveX/RxJava). They provide stream creation, manipulation and subscription capabilities and they are great. Streaming Pool sits on top of these technologies.
 
 The goal of Streaming Pool is to manage, reuse and share Reactive Streams, locally (in the same JVM) or remotely (distributed environment). The only required knowledge is the ID or `StreamId` that describes the Reactive Stream to obtain.
 
